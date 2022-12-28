@@ -47,7 +47,7 @@ async function run() {
         //capacityProviderStrategy: serviceResponse.capacityProviderStrategy,
         cluster: cluster,
         taskDefinition: taskDefinition,
-        launchType: serviceResponse.launchType,
+        //launchType: serviceResponse.launchType,
         networkConfiguration: serviceResponse.networkConfiguration,
         overrides: {
           containerOverrides: [
