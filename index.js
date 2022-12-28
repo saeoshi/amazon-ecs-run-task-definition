@@ -44,11 +44,10 @@ async function run() {
     try {
       const commandList = parseCommand(command);
       taskResponse = await ecs.runTask({
-        launchType: "FARGATE",
-        capacityProviderStrategy: {},
+        capacityProviderStrategy: serviceResponse.capacityProviderStrategy,
         cluster: cluster,
         taskDefinition: taskDefinition,
-        //launchType: serviceResponse.launchType,
+        launchType: serviceResponse.launchType,
         networkConfiguration: serviceResponse.networkConfiguration,
         overrides: {
           containerOverrides: [
